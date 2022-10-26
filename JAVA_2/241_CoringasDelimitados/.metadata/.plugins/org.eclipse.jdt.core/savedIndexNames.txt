@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+E:\Nélio Alves\JAVA_2\241\.metadata\.plugins\org.eclipse.jdt.core
+2811734150.index
+2200339744.index
+1865797976.index
