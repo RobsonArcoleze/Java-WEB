@@ -6,6 +6,8 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/robsondev/eclipse-workspace/jdbc-aula-1-projeto-completo.zip_expanded/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="/home/robsondev/Java/Java-WEB/JDBC/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="/home/robsondev/Java/Java-WEB/JDBC/c3p0-0.9.5.5.jar"/>
+	<classpathentry kind="lib" path="/home/robsondev/Java/Java-WEB/JDBC/mchange-commons-java-0.2.20.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
