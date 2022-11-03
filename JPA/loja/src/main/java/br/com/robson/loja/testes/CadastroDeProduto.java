@@ -3,10 +3,10 @@ package br.com.robson.loja.testes;
 import java.math.BigDecimal;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
+import br.com.robson.loja.dao.ProdutoDao;
 import br.com.robson.loja.modelo.Produto;
+import br.com.robson.loja.util.JPAUtil;
 
 public class CadastroDeProduto {
 
@@ -16,15 +16,11 @@ public class CadastroDeProduto {
 		celular.setDescricao("Muito legal");
 		celular.setPreco(new BigDecimal("800"));
 		
-		
-		//ENTITYMANAGEFACTORY É O SUBSTITUTO DA CONNECTION USADA NA JDBC
-		// CREATEENTITYMANAGERFACTORY ESPERA COMO ARGUMENTO A PERSISTENCE UNIT NAME = "COPIAR O NOME"
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("loja");
-		
-		EntityManager em = factory.createEntityManager();
+		EntityManager em = JPAUtil.getEntityManager();
+		ProdutoDao dao = new ProdutoDao(em);
 		
 		em.getTransaction().begin();;
-		em.persist(celular);
+		dao.cadastrar(celular);
 		em.getTransaction().commit();
 		em.close();
 		
