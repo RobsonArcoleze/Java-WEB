@@ -2,11 +2,12 @@ package br.com.robson.loja.modelo;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Entity // Esta anotação serve para mostrar que essa classe é uma entidade da JPA, ou
 		// seja, se econtra no banco de dados;
