@@ -32,6 +32,9 @@ public class CadastroDeProduto {
 		celulares = em.merge(celulares);
 		celulares.setNome("Sansumg");
 		em.flush();
+		
+		em.remove(celulares);
+		em.flush();
 			
 	}
 }
