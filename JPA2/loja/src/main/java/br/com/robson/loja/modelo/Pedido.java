@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity // Esta anotação serve para mostrar que essa classe é uma entidade da JPA, ou
 		// seja, se econtra no banco de dados;
 @Table(name = "pedidos") // QUANDO O NOME DA TABELA NÃO É IGUAL O NOME DA CLASSE
@@ -21,69 +20,49 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // PARA DIZER COMO O VALOR É GERADO, OU SEJA CONFORME O BANCO
 														// COM O AUTO_INCREMENT
 	private Long id;
-	private String nome;
-	private String descricao;
-	private BigDecimal preco;
-	private LocalDate dataCadastro = LocalDate.now();
-	
-	@ManyToOne // AQUI REPRESENTA A CARDINALIDADE ENTRE ESSE RELACIONAMENTO
-	private Categoria categoria;
-	
-		public Pedido() {}
+	private BigDecimal valorTotal;
+	private LocalDate data = LocalDate.now();
 
-	public Pedido(String nome, String descricao, BigDecimal preco, Categoria categoria) {
-		this.nome = nome;
-		this.descricao = descricao;
-		this.preco = preco;
-		this.categoria = categoria;
+	@ManyToOne // AQUI REPRESENTA A CARDINALIDADE ENTRE ESSE RELACIONAMENTO
+	private Cliente cliente;
+
+	public Pedido() {
+	}
+
+	public Pedido(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public LocalDate getDataCadastro() {
-		return dataCadastro;
-	}
-
-	public void setDataCadastro(LocalDate dataCadastro) {
-		this.dataCadastro = dataCadastro;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public BigDecimal getValorTotal() {
+		return valorTotal;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setValorTotal(BigDecimal valorTotal) {
+		this.valorTotal = valorTotal;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public LocalDate getData() {
+		return data;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setData(LocalDate data) {
+		this.data = data;
 	}
 
-	public BigDecimal getPreco() {
-		return preco;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setPreco(BigDecimal preco) {
-		this.preco = preco;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 }
