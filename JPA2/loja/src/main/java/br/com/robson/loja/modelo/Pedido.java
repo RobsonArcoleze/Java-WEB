@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity // Esta anotação serve para mostrar que essa classe é uma entidade da JPA, ou
@@ -28,7 +29,8 @@ public class Pedido {
 	@ManyToOne // AQUI REPRESENTA A CARDINALIDADE ENTRE ESSE RELACIONAMENTO
 	private Cliente cliente;
 	
-	private List<ItemPedido> produtos;
+	@OneToMany
+	private List<ItemPedido> itens;
 
 	public Pedido() {
 	}
